@@ -10,14 +10,14 @@
 	var t=function()
 	{
 
-	  return [	{
-              type: 'pie',
-							name: 'titolo a caso',
-						  data: [
-                    ['protection', parseFloat(feature.properties.pa_cover)],
-                    ['connection', parseFloat(feature.properties.connect)]
-                    ]
-            }]
+	  return [{
+                type: 'pie',
+		name: 'title',
+		data: [
+                      ['protection', parseFloat(feature.properties.pa_cover)],
+                      ['connection', parseFloat(feature.properties.connect)]
+                      ]
+               }]
 	}
 
         layer.on('popupopen', function(e) {
@@ -52,7 +52,7 @@
     layer.on('popupclose', function(e){
       $('#container').html("Loading...");
     });
-				 layer.on({
+		    layer.on({
   		    'mouseover': function (e) {
   		      highlight(e.target);
   		    },
@@ -83,12 +83,12 @@ $.ajax({
         geojsonLayer = L.geoJson(response, {
 		onEachFeature: pop_ecoregion_layer,
             style: function (feature) {
-						return {color: '#FFFFFF',
-								fillColor: '#FFFFFF',
-								weight: 1,
-								opacity: '0',
-								fillOpacity: '0'};
-						}
+			return {color: '#FFFFFF',
+					fillColor: '#FFFFFF',
+					weight: 1,
+					opacity: '0',
+					fillOpacity: '0'};
+			}
         }).addTo(lMap);
     }
 });
